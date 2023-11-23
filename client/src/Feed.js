@@ -6,7 +6,7 @@ import "./Feed.css";
 import axios from 'axios';
 import {TwitterContractAddress} from './config.js';
 import {ethers} from 'ethers';
-import Twitter from './utils/TwitterContract.json';
+import Twitter from './utils/twitContract.json';
 
 
 const Feed = () => {
@@ -45,7 +45,7 @@ const Feed = () => {
     try{
       const {ethereum} = window
       if(ethereum){
-        const provider = new ethers.providers.Web3Provider(ethereum);
+        const provider=ethers.JsonRpcProvider(ethereum);
         const signer =provider.getSigner();
         const TwitterContract = new ethers.Contract(
           TwitterContractAddress,
@@ -73,7 +73,7 @@ const Feed = () => {
     try{
       const {ethereum} = window
       if(ethereum){
-        const provider = new ethers.providers.Web3Provider(ethereum);
+        const provider = new ethers.JsonRpcProvider(ethereum);
         const signer =provider.getSigner();
         const TwitterContract = new ethers.Contract(
           TwitterContractAddress,
