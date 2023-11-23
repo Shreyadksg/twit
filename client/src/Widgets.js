@@ -15,9 +15,17 @@ const Widgets = () => {
       <div className ="widgets_input">
         <SearchIcon className ="widgets_searchIcon"/>
         <input placeholder="Search Twitter" type="text"/>
+      </div>
+      <div className="widgets_widgetContainer">
+        <h2> What's The Update !</h2>
+        <TwitterTimeLineEmbed
+        sourceType="profile"
+        screenName="kmmtmm92"
+        options={{height: 800}}
+        />
+    
 
       </div>
-
     </div>
   )
 }
